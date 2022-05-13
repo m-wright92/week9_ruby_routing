@@ -56,8 +56,9 @@ get('/words/search') do
   erb(:word)
 end
 
-get('/words/:id/definitions/:def_id') do
-  @definition = Definition.find(params[:def_id].to_i())
+get('/words/:id/definitions/:definition_id') do
+  @word = Word.find(params[:id].to_i())
+  @definition = Definition.find(params[:definition_id].to_i())
   erb(:definitions)
 end
 

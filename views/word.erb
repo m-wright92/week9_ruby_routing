@@ -5,7 +5,7 @@
 <% if @word.definitions.any? %>
   <ul>
     <% @word.definitions.each do |definition| %>
-      <li><a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= defintion.name %></a></li>
+      <li><a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.define %></a></li>
     <% end %>
   </ul>
 <% else %>
