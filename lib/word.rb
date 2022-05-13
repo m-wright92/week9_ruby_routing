@@ -26,6 +26,6 @@ class Word
   end
 
   def self.find(id)
-    @@words[]
+    @@words[id]
   end
 end
