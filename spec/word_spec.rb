@@ -80,4 +80,16 @@ describe('#Word') do
       expect(Word.search('goodbye')).to(eq(word2))
     end
   end
+
+  describe('#definitions') do
+    it('returns all definitions for a word') do
+      word1 = Word.new('goodbye', nil)
+      word1.save
+      define1 = Definition.new('greeting', word1.id, nil)
+      define1.save
+      define2 = Definition.new('hi', word1.id, nil)
+      define2.save
+      expect(word1.definitions).to(eq([define1, define2]))
+    end
+  end
 end

@@ -9,7 +9,7 @@ class Word
   end
 
   def self.all
-    @@words.values()
+    @@words.values
   end
 
   def self.clear
@@ -43,5 +43,9 @@ class Word
         return word[1]
       end
     end
+  end
+
+  def definitions
+    Definition.find_by_word(self.id)
   end
 end
