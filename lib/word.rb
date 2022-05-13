@@ -32,4 +32,7 @@ class Word
   def update(name)
     @name = name
   end
+
+  def delete
+  end
 end
