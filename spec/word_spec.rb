@@ -40,4 +40,14 @@ describe('#Word') do
       expect(Word.all).to(eq([word1]))
     end
   end
+
+  describe('.find') do
+    it('locates an album by its id') do
+      word1 = Word.new('hello', nil)
+      word1.save
+      word2 = Word.new('goodbye', nil)
+      word2.save
+      expect(Word.find(word1.id)).to(eq(word1))
+    end
+  end
 end
