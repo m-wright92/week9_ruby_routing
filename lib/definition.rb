@@ -23,7 +23,7 @@ class Definition
   end
 
   def self.clear
-    @@definitions
-    @@total_rows 
+    @@definitions = {}
+    @@total_rows = 0
   end
 end
