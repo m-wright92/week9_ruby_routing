@@ -19,7 +19,7 @@ class Definition
   end
 
   def delete
-    @@definitions.delete()
+    @@definitions.delete(self.id)
   end
 
   def self.all

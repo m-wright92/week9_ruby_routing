@@ -62,7 +62,7 @@ describe('#Definition') do
       define2 = Definition.new('Hi', @word1.id, nil)
       define2.save
       define2.delete
-      expect(Definition.all).to(eq(define1))
+      expect(Definition.all).to(eq([define1]))
     end
   end
 end
