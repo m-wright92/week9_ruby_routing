@@ -10,9 +10,14 @@
   </ul>
 <% else %>
   <p>You haven't added any definitions yet.</p>
-  <p><a href="/words/<%= @word.id %>/definitions">Add a new definition</a></p>
 <% end %>
 
-
+<form action="/words/<%= @word.id %>/definitions" method="post">
+  <div class="form-group">
+    <label for="define_input">Definition:</label>
+    <input id="define_input" name="define_input" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Add definition</button>
+</form>
 
 <a href="/words">Return to your list of words</a>
