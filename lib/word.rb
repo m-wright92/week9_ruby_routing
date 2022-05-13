@@ -30,6 +30,6 @@ class Word
   end
 
   def update(name)
-    @name = names
+    @name = name
   end
 end

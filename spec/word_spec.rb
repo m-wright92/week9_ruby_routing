@@ -56,7 +56,7 @@ describe('#Word') do
       word1 = Word.new('hello', nil)
       word1.save()
       word1.update("goodbye")
-      expect(word.name).to(eq("goodbye"))
+      expect(word1.name).to(eq("goodbye"))
     end
   end
 end
