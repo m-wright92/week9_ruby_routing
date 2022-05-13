@@ -28,6 +28,7 @@ describe('#Definition') do
   describe('#save') do
     it('saves a definition for a word') do
       define1 = Definition.new('greeting', @word1.id, nil)
+      define1.save
       expect(Definition.all).to(eq([define1]))
     end
   end

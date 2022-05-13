@@ -1,5 +1,6 @@
 class Definition
   attr_accessor :define, :word_id
+  attr_reader :id
   @@definitions = {}
   @@total_rows = 0
 
@@ -18,5 +19,6 @@ class Definition
   end
 
   def save
+    @@definitions[self.id] = Definition.new(self.define, self.word_id, self.id)
   end
 end
