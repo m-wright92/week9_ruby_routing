@@ -21,4 +21,9 @@ class Definition
   def save
     @@definitions[self.id] = Definition.new(self.define, self.word_id, self.id)
   end
+
+  def self.clear
+    @@definitions
+    @@total_rows 
+  end
 end
