@@ -1,0 +1,15 @@
+<h1>The Finer Word Definer</h1>
+
+<h3>Words you've defined:</h3>
+
+<% if @words.any? %>
+  <ul>
+    <% @words.each do |word| %>
+      <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You don't any words yet!</p>
+<% end %>
+
+<a href="/words/new">Add a new word</a>
