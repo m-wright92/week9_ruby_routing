@@ -70,4 +70,14 @@ describe('#Word') do
       expect(Word.all).to(eq([word1]))
     end
   end
+
+  describe('.search') do
+    it('provides a word with the inputted word') do
+      word1 = Word.new('hello', nil)
+      word1.save
+      word2 = Word.new('Goodbye', nil)
+      word2.save
+      expect(Word.search('goodbye')).to(eq(word2))
+    end
+  end
 end

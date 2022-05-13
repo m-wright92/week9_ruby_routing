@@ -4,7 +4,7 @@ class Word
   @@total_rows = 0
 
   def initialize(name, id)
-    @name = name
+    @name = name.downcase
     @id = id || @@total_rows += 1
   end
 
@@ -35,5 +35,13 @@ class Word
 
   def delete
     @@words.delete(self.id)
+  end
+
+  def self.search(name)
+    # @@words.each do |word|
+    #   if word[1].name == name
+    #     return word[1]
+    #   end
+    # end
   end
 end
