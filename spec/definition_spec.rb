@@ -54,4 +54,15 @@ describe('#Definition') do
       expect(Definition.find(define1.id)).to(eq(define1))
     end
   end
+
+  describe('#delete') do
+    it('deletes a definition from a word') do
+      define1 = Definition.new('greeting', @word1.id, nil)
+      define1.save
+      define2 = Definition.new('Hi', @word1.id, nil)
+      define2.save
+      define2.delete
+      expect(Definition.all).to(eq(define1))
+    end
+  end
 end
