@@ -6,7 +6,8 @@ require 'definition'
 describe('#Definition') do
 
   before(:each) do
-    Word.clear()
+    Word.clear
+    Definition.clear
     @word1 = Word.new("hello", nil)
     @word1.save
   end
@@ -34,13 +35,23 @@ describe('#Definition') do
   end
 
   describe('.clear') do
-    it("clears all definitions from storage") do
+    it('clears all definitions from storage') do
       define1 = Definition.new('greeting', @word1.id, nil)
       define1.save
       define2 = Definition.new("Hi", @word1.id, nil)
       define2.save
       Definition.clear
       expect(Definition.all).to(eq([]))
+    end
+  end
+
+  describe('.find') do
+    it('locates a definition by its id') do
+      define1 = Definition.new('greeting', @word1.id, nil)
+      define1.save
+      define2 = Definition.new('Hi', @word1.id, nil)
+      define2.save
+      expect(Definition.find(define1.id)).to(eq(define1))
     end
   end
 end

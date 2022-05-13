@@ -14,16 +14,20 @@ class Definition
     (self.define == definition_to_compare.define) && (self.word_id == definition_to_compare.word_id)
   end
 
-  def self.all
-    @@definitions.values
-  end
-
   def save
     @@definitions[self.id] = Definition.new(self.define, self.word_id, self.id)
+  end
+
+  def self.all
+    @@definitions.values
   end
 
   def self.clear
     @@definitions = {}
     @@total_rows = 0
+  end
+
+  def self.find(id)
+    @@definitions[id]
   end
 end
