@@ -38,10 +38,10 @@ class Word
   end
 
   def self.search(name)
-    # @@words.each do |word|
-    #   if word[1].name == name
-    #     return word[1]
-    #   end
-    # end
+    @@words.each do |word|
+      if word[1].name == name
+        return word[1]
+      end
+    end
   end
 end
