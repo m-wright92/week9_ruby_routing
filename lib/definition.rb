@@ -16,4 +16,7 @@ class Definition
   def self.all
     @@definitions.values
   end
+
+  def save
+  end
 end

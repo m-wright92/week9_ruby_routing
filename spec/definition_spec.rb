@@ -20,8 +20,15 @@ describe('#Definition') do
   end
 
   describe('.all') do
-    it("returns a list of all definitions") do
+    it('returns a list of all definitions') do
       expect(Definition.all).to(eq([]))
+    end
+  end
+
+  describe('#save') do
+    it('saves a definition for a word') do
+      define1 = Definition.new('greeting', @word1.id, nil)
+      expect(Definition.all).to(eq([define1]))
     end
   end
 end
