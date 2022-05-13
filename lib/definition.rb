@@ -12,4 +12,8 @@ class Definition
   def ==(definition_to_compare)
     (self.define == definition_to_compare.define) && (self.word_id == definition_to_compare.word_id)
   end
+
+  def self.all
+    @@definitions.values
+  end
 end

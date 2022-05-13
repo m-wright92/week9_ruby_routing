@@ -18,4 +18,10 @@ describe('#Definition') do
       expect(define1).to(eq(define2))
     end
   end
+
+  describe('.all') do
+    it("returns a list of all definitions") do
+      expect(Definition.all).to(eq([]))
+    end
+  end
 end
