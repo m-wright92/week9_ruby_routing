@@ -65,4 +65,16 @@ describe('#Definition') do
       expect(Definition.all).to(eq([define1]))
     end
   end
+
+  describe('.find_by_word') do
+    it('returns definitions saved to a word') do
+      word2 = Word.new('goodbye', nil)
+      word2.save
+      define1 = Definition.new('greeting', @word1.id, nil)
+      define1.save
+      define2 = Definition.new('hi', word2.id, nil)
+      define2.save
+      expect(Definition.find_by_word(word2.id)).to(eq([define2]))
+    end
+  end
 end
