@@ -1,5 +1,5 @@
 class Definition
-  attr_accessor :define
+  attr_accessor :define, :word_id
   @@definitions = {}
   @@total_rows = 0
 
