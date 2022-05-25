@@ -62,9 +62,9 @@ describe('the definition path', {:type => :feature}) do
     expect(page).to have_content("hi")
   end
 
-  # it('deletes a word') do
-  #   visit("/words/#{@word.id}/edit")
-  #   click_on('Delete word')
-  #   expect(page).to have_no_content("hello")
-  # end
+  it('deletes a definition') do
+    visit("/words/#{@word.id}/definitions/#{@definition.id}/edit")
+    click_on('Delete definition')
+    expect(page).to have_no_content("greeting")
+  end
 end
