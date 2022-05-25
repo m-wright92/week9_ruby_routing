@@ -18,6 +18,10 @@ class Definition
     @@definitions[self.id] = Definition.new(self.define, self.word_id, self.id)
   end
 
+  def update(define)
+    @define = define
+  end
+
   def delete
     @@definitions.delete(self.id)
   end

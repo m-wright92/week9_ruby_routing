@@ -55,6 +55,15 @@ describe('#Definition') do
     end
   end
 
+  describe('#update') do
+  it("updates a definition by its id") do
+    define1 = Definition.new('greeting', @word1.id, nil)
+      define1.save
+    define1.update("goodbye")
+    expect(define1.define).to(eq("goodbye"))
+  end
+end
+
   describe('#delete') do
     it('deletes a definition from a word') do
       define1 = Definition.new('greeting', @word1.id, nil)
