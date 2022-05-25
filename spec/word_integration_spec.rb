@@ -23,8 +23,10 @@ describe('the word path', {:type => :feature}) do
 
   it('updates a word') do
     visit('/words')
-    click_on("goodbye")
+    click_on("hello")
     click_on("Edit word")
-    fill_in("")
+    fill_in("name", :with => "goodbye")
+    click_on('Update')
+    expect(page).to have_content("goodbye")
   end
 end
