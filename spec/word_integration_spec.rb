@@ -29,4 +29,10 @@ describe('the word path', {:type => :feature}) do
     click_on('Update')
     expect(page).to have_content("goodbye")
   end
+
+  it('deletes a word') do
+    visit("/words/#{@word.id}/edit")
+    click_on('Delete word')
+    expect(page).to have_no_content("hello")
+  end
 end
