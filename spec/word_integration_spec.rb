@@ -43,6 +43,8 @@ describe('the definition path', {:type => :feature}) do
     Definition.clear
     @word = Word.new("hello", nil)
     @word.save
+    @definition = Definition.new("greeting", @word.id, nil)
+    @definition.save
   end
 
   it('creates a definition') do
@@ -52,14 +54,13 @@ describe('the definition path', {:type => :feature}) do
     expect(page).to have_content('pancakes')
   end
 
-  # it('updates a word') do
-  #   visit('/words')
-  #   click_on("hello")
-  #   click_on("Edit word")
-  #   fill_in("name", :with => "goodbye")
-  #   click_on('Update')
-  #   expect(page).to have_content("goodbye")
-  # end
+  it('updates a definition') do
+    visit("/words/#{@word.id}/definitions/#{@definition.id}")
+    click_on("Edit definition")
+    fill_in("name", :with => "hi")
+    click_on('Update')
+    expect(page).to have_content("hi")
+  end
 
   # it('deletes a word') do
   #   visit("/words/#{@word.id}/edit")
