@@ -1,11 +1,13 @@
 require 'pry'
 require 'rspec'
 require 'word'
+require 'definition'
 
 describe('#Word') do
 
   before(:each) do
     Word.clear
+    Definition.clear
   end
 
   describe('.all') do
