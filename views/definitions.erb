@@ -1,3 +1,6 @@
-<h2><%= @word.name %></h2>
+<h2>Word: <%= @word.name %></h2>
 
-<p><%= @definition.define %><p>
+<p>Your definition: <%= @definition.define %><p>
+
+<a href="/words/<%= @word.id %>/definitions/<%= @definition.id %>/edit">Edit definition</a>
+
